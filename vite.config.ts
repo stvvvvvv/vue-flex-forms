@@ -4,15 +4,29 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 
-// https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [
-    vue(),
-    vueDevTools(),
-  ],
-  resolve: {
-    alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
-    }
-  }
+	build: {
+		lib: {
+			entry: './src/index.ts',
+			name: 'VueFlexForms',
+			fileName: (format) => `vue-flex-forms.${format}.js`,
+		},
+		rollupOptions: {
+			external: ['vue'],
+			output: {
+				globals: {
+					vue: 'Vue',
+				},
+			},
+		},
+	},
+	plugins: [
+		vue(),
+		vueDevTools(),
+	],
+	resolve: {
+		alias: {
+			'@': fileURLToPath(new URL('./src', import.meta.url))
+		}
+	}
 })
