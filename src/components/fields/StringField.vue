@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref, computed, toRefs, watch } from 'vue';
-import validateField from '@/components/forms/validation/ValidationService';
+import validateField from '@/validation/ValidationService';
 import { useEventBus } from '@vueuse/core'
 
 import Hide from '@/components/icons/HideIcon.vue';
