@@ -1,6 +1,9 @@
-import { computed, Ref } from 'vue';
-import { useVuelidate, ValidationRuleWithoutParams } from '@vuelidate/core';
+import { computed } from 'vue';
+import { useVuelidate } from '@vuelidate/core';
 import { required, email, minLength, sameAs } from '@vuelidate/validators';
+
+import type { Ref } from 'vue';
+import type { ValidationRuleWithoutParams } from '@vuelidate/core';
 
 interface RulesConfig {
 	email?: ValidationRuleWithoutParams,
