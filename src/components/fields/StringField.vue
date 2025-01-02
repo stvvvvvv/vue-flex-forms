@@ -34,12 +34,12 @@
 
 <script lang="ts" setup>
 import { reactive, ref, computed, toRefs, watch } from 'vue';
-import validateField from '@/modules/forms/validation/ValidationService';
+import validateField from '@/components/forms/validation/ValidationService';
 import { useEventBus } from '@vueuse/core'
 
-import Hide from '@/modules/icons/HideIcon.vue';
-import Show from '@/modules/icons/ShowIcon.vue';
-import Attention from '@/modules/icons/AttentionIcon.vue';
+import Hide from '@/components/icons/HideIcon.vue';
+import Show from '@/components/icons/ShowIcon.vue';
+import Attention from '@/components/icons/AttentionIcon.vue';
 
 const props = defineProps({
 	type: {

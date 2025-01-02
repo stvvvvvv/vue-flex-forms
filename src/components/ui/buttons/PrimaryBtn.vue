@@ -6,7 +6,7 @@
 </template>
 
 <script setup lang="ts">
-import Loading from '@/modules/icons/LoadingIcon.vue';
+import Loading from '@/components/icons/LoadingIcon.vue';
 
 defineProps({
 	isLoading: {
