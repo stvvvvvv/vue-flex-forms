@@ -1,4 +1,6 @@
 export interface FormField {
-	value: string;
+	value: any;
 	isValid: boolean;
+	error?: string;
+	rules?: any;
 }

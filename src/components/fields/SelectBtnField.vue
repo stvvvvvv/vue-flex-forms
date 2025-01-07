@@ -16,7 +16,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, computed, toRefs } from 'vue';
+import { ref, toRefs } from 'vue';
 import { useEventBus } from '@vueuse/core'
 
 type SelectOption = {

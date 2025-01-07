@@ -23,7 +23,7 @@
 
 <script lang="ts" setup>
 import { ref, reactive, computed, toRefs, watch } from 'vue';
-import validateField from '@/validation/ValidationService';
+import {validateField} from '@/validation/ValidationService';
 import { useEventBus } from '@vueuse/core'
 import Attention from '@/components/icons/AttentionIcon.vue';
 
@@ -52,13 +52,16 @@ const { name, placeholder, rules } = toRefs(props);
 
 const fieldValue = ref(null);
 
-const v$ = validateField(name, fieldValue, rules);
+const { v$ } = validateField(name, fieldValue, rules);
 const isValid = computed(() => v$.value[name.value].$pending ? true : !v$.value[name.value].$invalid);
 
 const field = reactive({
 	[name.value]: {
 		value: fieldValue,
 		isValid,
+		name, 
+		placeholder, 
+		rules
 	},
 });
 

@@ -34,7 +34,7 @@
 
 <script lang="ts" setup>
 import { reactive, ref, computed, toRefs, watch } from 'vue';
-import validateField from '@/validation/ValidationService';
+import {validateField} from '@/validation/ValidationService';
 import { useEventBus } from '@vueuse/core'
 
 import Hide from '@/components/icons/HideIcon.vue';
@@ -79,13 +79,14 @@ const showPassword = type.value === 'password' ? true : false;
 
 const fieldValue = ref('');
 
-const v$ = validateField(name, fieldValue, rules);
+const { v$ } = validateField(name, fieldValue, rules);
 const isValid = computed(() => v$.value[name.value].$pending ? true : !v$.value[name.value].$invalid);
 
 const field = reactive({
 	[name.value]: {
 		value: fieldValue,
 		isValid,
+		type, name, placeholder, icon, rules
 	},
 });
 

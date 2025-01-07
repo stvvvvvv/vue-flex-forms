@@ -1,7 +1,8 @@
 // import type { Ref } from 'vue';
 
-export type FormProps = {
-	submitBtnText?: string;
+export interface FormProps {
 	isHideSubmit?: boolean;
+	submitBtnText: string;
 	isSubmitOnUpdate?: boolean;
-};
+}
+

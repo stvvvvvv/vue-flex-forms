@@ -1,0 +1,1 @@
+export type FormError = { message: string, fieldName: string }
